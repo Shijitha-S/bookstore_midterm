@@ -286,7 +286,7 @@ INSERT INTO Review(review_id,book_id,customer_id,Customer_rating,Customer_commen
 SELECT * FROM Review;
 ```
 
-## DENTIFYING 1 COMPLETE SET OF DDL/DML FOR THE TABLES BOOKS
+## 4. DENTIFYING 1 COMPLETE SET OF DDL/DML FOR THE TABLES BOOKS
 `4.1. Extracting the data for the book id 1001`
 ```sql
 select * from Books 
@@ -320,7 +320,7 @@ select COUNT(*) from Books;   --- the result will show 10 rows as a row have bee
 ```
 
 
-## 5.SQL QUERIES FOR THE BELOW LISTED REQUIREMENTS.
+## 5. SQL QUERIES FOR THE BELOW LISTED REQUIREMENTS.
 `5.1 Power writers (authors) with more than 2 books in the same genre published within the last 50 years`
 ```sql
 SELECT a.Author_id, a.Author_name, b.book_genre, COUNT(b.book_id) AS book_count
