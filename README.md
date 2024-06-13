@@ -4,6 +4,7 @@
 
 ## 2. The tables required for Bookstore along with the details of the the data being captured for each table, and what type each of the attribute are:
 Below are the Tables and their attributes with Data Types required:
+
 **Table**: **Authors**
 **Attributes**: author_id (INT, PRIMARY KEY)
                 author_name (VARCHAR),
