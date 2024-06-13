@@ -286,7 +286,7 @@ INSERT INTO Review(review_id,book_id,customer_id,Customer_rating,Customer_commen
 SELECT * FROM Review;
 ```
 
-## 4. DENTIFYING 1 COMPLETE SET OF DDL/DML FOR THE TABLES BOOKS
+## 4. IDENTIFYING 1 COMPLETE SET OF DDL/DML FOR THE TABLES BOOKS
 `4.1. Extracting the data for the book id 1001`
 ```sql
 select * from Books 
@@ -356,5 +356,5 @@ HAVING SUM(o.Order_amount) > 75;
 ```
 
 
-## 6. Creating a Typescript interface that will allow modification to a table.
+## 6. CREATING A TYPESCRIPT INTERFACE THAT WILL ALLOW MODIFICATION TO A TABLE.
 **Please work on this part**
