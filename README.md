@@ -105,7 +105,7 @@ CREATE TABLE Customers (
 );
 ```
 
-`Creating a order details of customers`\
+`Creating a order details of customers`
 ```sql
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
@@ -165,7 +165,8 @@ INSERT INTO Authors(Author_id,Author_name, Author_type, Autor_DOB) VALUES
 SELECT * FROM Authors;
 ```
 
-**Adding data into Publisher table**
+`Adding data into Publisher table`
+```sql
 INSERT INTO Publisher (publisher_id,publisher_name,Publisher_contact,Publisher_email) VALUES
 (100,'HarperCollins',2127829000,'HarperCollins@gmail.com'),
 (101,'Scholastic',1378961231,'Scholastic01@gmail.com'),
@@ -177,10 +178,14 @@ INSERT INTO Publisher (publisher_id,publisher_name,Publisher_contact,Publisher_e
 (107,'Lippincott Co.',1765599908,'Lippincottco1@gmail.com'),
 (108,'Henneberry',1901557870,'Henneberry@gmail.com'),
 (109,'Griffith',0967538277,'Griffith9987@gmailcom');
-**Verifying the data inserted in Publisher**
+```
+`Verifying the data inserted in Publisher`
+```sql
 SELECT * FROM Publisher;
+```
 
-**Adding data into Books table**
+`Adding data into Books table`
+```sql
 INSERT INTO Books(book_id,book_title,book_genre,Author_id,publisher_id,publication_date,format,book_cost) VALUES
 (1000,'Pride and Prejudice','Fiction',1,100,'1813-01-28','physical',13.99),
 (1001,'Harry Potter and the prisoner of Askaban','Fantasy',4, 105,'1999-06-26','physical',24.99),
@@ -192,10 +197,14 @@ INSERT INTO Books(book_id,book_title,book_genre,Author_id,publisher_id,publicati
 (1007,'Inferno','Fiction',1,100,'2013-01-01','ebook',30.08),
 (1008,'Twenty Thousand Leagues Under the Sea','Adventure',10,108,'1870-01-01', 'audiobook', 12.99),
 (1009,'The Shining','Horror',5,106,'1977-01-28', 'ebook', 11.99);
-**Verifying the data inserted in Books**
+```
+`Verifying the data inserted in Books`
+```sql
 SELECT * FROM Books;
+```
 
-**Adding data into Customers table**
+``Adding data into Customers table``
+```sql
 INSERT INTO Customers(customer_id,customer_name,customer_email,Customer_phone,register_date) VALUES
 (5000,'Bob Smith','bob.smith@example.com',1234567890,'2001-01-01'),
 (5001,'Frank Black','frank.black@example.com',2134567789,'2002-08-10'),
@@ -207,10 +216,14 @@ INSERT INTO Customers(customer_id,customer_name,customer_email,Customer_phone,re
 (5007,'Noah Robinson', 'noah.robinson@example.com',2007739754,'2012-11-01'),
 (5008,'Tina Young', 'tina.young@example.com',2222220000,'2015-06-05'),
 (5009,'Ruth Adams', 'ruth.adams@example.com',1122334455,'2023-12-26');
-**Verifying the data inserted in Customers**
+```
+``Verifying the data inserted in Customers``
+```sql
 SELECT * FROM Customers;
+```
 
-**Adding data into Orders table**
+`Adding data into Orders table`
+```sql
 INSERT INTO Orders(order_id,customer_id,order_date,Order_amount)VALUES
 (7000,5000,'2023-01-15', 112.37),
 (7001,5003,'2023-03-17', 10.01),
@@ -222,10 +235,14 @@ INSERT INTO Orders(order_id,customer_id,order_date,Order_amount)VALUES
 (7007,5006,'2023-12-26', 75.49),
 (7008,5008,'2023-02-28', 15.10),
 (7009,5003,'2023-08-04', 41.09);
-**Verifying the data inserted in Orders**
+```
+`Verifying the data inserted in Orders`
+```sql
 SELECT * FROM Orders;
+```
 
-**Adding data into OrderItems table**
+`Adding data into OrderItems table`
+```sql
 INSERT INTO OrderItems(order_item_id,order_id,book_id,order_quantity,total_price) VALUES
 (9000,7000,1001,2,49.88),
 (9001,7000,1003,3,62.49),
@@ -237,10 +254,14 @@ INSERT INTO OrderItems(order_item_id,order_id,book_id,order_quantity,total_price
 (9007,7003,1007,2,61.99),
 (9008,7001,1002,1,10.01),
 (9009,7007,1000,5,75.49);
-**Verifying the data inserted in OrderItems**
+```
+`Verifying the data inserted in OrderItems`
+```sql
 SELECT * FROM OrderItems;
+```
 
-**Adding data into Review table**
+`Adding data into Review table`
+```sql
 INSERT INTO Review(review_id,book_id,customer_id,Customer_rating,Customer_comments,review_date) VALUES
 (11000,1000,5001,5,'An absolute classic','2024-06-01'),
 (12000,1000,5006,5,'A masterpiece','2024-06-07'),
@@ -252,53 +273,81 @@ INSERT INTO Review(review_id,book_id,customer_id,Customer_rating,Customer_commen
 (18000,1004,5005,2,'not recommended','2024-06-02'),
 (19000,1007,5007,4,'good','2024-05-31'),
 (20000,1003,5009,4,'A thrilling and imaginative journey','2024-06-04');
-**Verifying the data inserted in Review**
+```
+`Verifying the data inserted in Review`
+```sql
 SELECT * FROM Review;
-
+```
 
 ## DENTIFYING 1 COMPLETE SET OF DDL/DML FOR THE TABLES BOOKS
-**4.1. Extracting the data for the book id 1001**
+`4.1. Extracting the data for the book id 1001`
+```sql
 select * from Books 
 where book_id=1001;
+```
 
--- 4.2. Update the cost of one of the book with id 1000 and view the updates
+`4.2. Update the cost of one of the book with id 1000 and view the updates`
+```sql
 UPDATE Books 
 set publication_date='2010-05-12' 
 where book_id=1000;
-
+```
+```sql
 select * from Books 
 where book_id=1000;
+```
 
--- 4.3. Add one extra row to the books data and check the number of rows in table
+`4.3. Add one extra row to the books data and check the number of rows in table`
+```sql
 insert into Books(book_id,book_title,book_genre,Author_id,publisher_id,publication_date,format,book_cost) VALUES
 (1010,'Pride','Science Fiction',1,100,'1813-03-28','physical',17.99);
-
+```
+```sql
 select COUNT(*) from Books;   --- the result will show 11 rows as new row have been added
+```
 
--- 4.4. delete one row from Books table and then check the number of rows
+`4.4. delete one row from Books table and then check the number of rows`
+```sql
 DELETE FROM Books where book_id=1010;
 select COUNT(*) from Books;   --- the result will show 10 rows as a row have been deleted
+```
 
 
-
--- 5. SQL QUERIES FOR THE BELOW LISTED REQUIREMENTS.
--- 5.1 Power writers (authors) with more than 2 books in the same genre published within the last X years
+##5. SQL QUERIES FOR THE BELOW LISTED REQUIREMENTS.
+`5.1 Power writers (authors) with more than 2 books in the same genre published within the last 50 years`
+```sql
 SELECT a.Author_id, a.Author_name, b.book_genre, COUNT(b.book_id) AS book_count
 FROM Authors a
 JOIN Books b ON a.Author_id = b.Author_id
 WHERE b.publication_date >= DATE_SUB(CURDATE(), INTERVAL 50 YEAR)
 GROUP BY a.Author_id, b.book_genre
 HAVING COUNT(b.book_id) > 2;
+```
 
--- 5.2 Loyal Customers who has spent more than 75 dollars in the last year
+`5.2 Loyal Customers who has spent more than 75 dollars in the last year`
+```sql
 SELECT o.customer_id, SUM(o.Order_amount) AS total_expenditure
 FROM Orders o
 WHERE o.order_date >= '2023-01-01'
 GROUP BY o.customer_id
 HAVING SUM(o.Order_amount) > 75;
+```
 
--- 5.3 Well Reviewed books that has a better user rating than average
+`5.3 Well Reviewed books that has a better user rating than average`
+```sql
+--SQL CODE here
+```
 
--- 5.4 The most popular genre by sales
+`5.4 The most popular genre by sales`
+```sql
+--SQL CODE here
+```
 
--- 5.5 The 10 most recent posted reviews by Customers 
+`5.5 The 10 most recent posted reviews by Customers`
+```sql
+--SQL CODE here
+```
+
+
+## 6. Creating a Typescript interface that will allow modification to a table.
+**Please work on this part**
