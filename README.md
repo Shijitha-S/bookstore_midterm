@@ -6,6 +6,7 @@
 Below are the Tables and their attributes with Data Types required:
 
 **Table**: **Authors**
+
 **Attributes**: author_id (INT, PRIMARY KEY)
                 author_name (VARCHAR),
                 Author_type (VARCHAR),
