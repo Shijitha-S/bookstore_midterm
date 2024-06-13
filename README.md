@@ -2,7 +2,7 @@
 
 ## 1. Below are the duties being assigned to the individual members.
 
-## 2. The tables required for Bookstore along with the details of the the data being captured for each table, and what type each of the attribute are:
+## 2. The tables required for Bookstore along with the details of the the data being captured for each table, and what type each of the attribute are as given below:
 Below are the Tables and their attributes with Data Types required:
 
 **Table**: **Authors**                                                                                                                                          
