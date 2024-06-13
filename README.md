@@ -320,7 +320,7 @@ select COUNT(*) from Books;   --- the result will show 10 rows as a row have bee
 ```
 
 
-##5. SQL QUERIES FOR THE BELOW LISTED REQUIREMENTS.
+## 5.SQL QUERIES FOR THE BELOW LISTED REQUIREMENTS.
 `5.1 Power writers (authors) with more than 2 books in the same genre published within the last 50 years`
 ```sql
 SELECT a.Author_id, a.Author_name, b.book_genre, COUNT(b.book_id) AS book_count
