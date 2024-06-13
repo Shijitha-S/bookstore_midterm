@@ -17,7 +17,7 @@ Below are the Tables and their attributes with Data Types required:
                  Publisher_contact (INT),
                  Publisher_email (VARCHAR)
 
-**Table**: **Books**
+**Table**: **Books**               
 **Attributes**: book_id (INT, PRIMARY KEY, AUTO_INCREMENT)
                 book_title (VARCHAR)
                 book_genre (VARCHAR)
@@ -27,7 +27,7 @@ Below are the Tables and their attributes with Data Types required:
                 format (ENUM('physical', 'ebook', 'audiobook'))
                 book_cost (DECIMAL)
 
-**Table**: **Customers**
+**Table**: **Customers**                                                                                                                                          
 **Attributes**: customer_id (INT, PRIMARY KEY, AUTO_INCREMENT)
                 customer_name (VARCHAR)
                 customer_email (VARCHAR)
