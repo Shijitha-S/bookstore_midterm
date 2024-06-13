@@ -13,47 +13,53 @@ Below are the Tables and their attributes with Data Types required:
                 Author_DOB (DATE)
 
 **Table**: **Publishers**                                                                                                                                                   
-**Attributes**:  publisher_id(INT, PRIMARY KEY),
-                 publisher_name (VARCHAR),
-                 Publisher_contact (INT),
-                 Publisher_email (VARCHAR)
+**Attributes**:                                                                                                                                             
+                publisher_id(INT, PRIMARY KEY),                                                                                                  
+                publisher_name (VARCHAR),                                                                                                            
+                Publisher_contact (INT),                                                                                                            
+                Publisher_email (VARCHAR)
 
 **Table**: **Books**               
-**Attributes**: book_id (INT, PRIMARY KEY, AUTO_INCREMENT)
-                book_title (VARCHAR)
-                book_genre (VARCHAR)
-                author_id (INT, FOREIGN KEY references Authors(author_id))
-                publisher_id (INT, FOREIGN KEY references Publishers(publisher_id))
-                publication_date (DATE)
-                format (ENUM('physical', 'ebook', 'audiobook'))
+**Attributes**:                                                                                                                                                     
+                book_id (INT, PRIMARY KEY, AUTO_INCREMENT)                                                                                            
+                book_title (VARCHAR)                                                                                                                    
+                book_genre (VARCHAR)                                                                                                              
+                author_id (INT, FOREIGN KEY references Authors(author_id))                                                                      
+                publisher_id (INT, FOREIGN KEY references Publishers(publisher_id))                                                                                            
+                publication_date (DATE)                                                                                                            
+                format (ENUM('physical', 'ebook', 'audiobook'))                                                                                                      
                 book_cost (DECIMAL)
 
 **Table**: **Customers**                                                                                                                                          
-**Attributes**: customer_id (INT, PRIMARY KEY, AUTO_INCREMENT)
-                customer_name (VARCHAR)
-                customer_email (VARCHAR)
-                Customer_phone (VARCHAR)
+**Attributes**:                                                                                                                                                        
+                customer_id (INT, PRIMARY KEY, AUTO_INCREMENT)                                                                                                    
+                customer_name (VARCHAR)                                                                                                                
+                customer_email (VARCHAR)                                                                                                                    
+                Customer_phone (VARCHAR)                                                                                                          
                 register_date (DATE)
 
 **Table**: **Orders**                                                                                                                                       
-**Attributes**: order_id (INT, PRIMARY KEY, AUTO_INCREMENT)
-                customer_id (INT, FOREIGN KEY references Customers(customer_id))
-                order_date (DATE)
+**Attributes**:                                                                                                                                             
+                order_id (INT, PRIMARY KEY, AUTO_INCREMENT)                                                                    
+                customer_id (INT, FOREIGN KEY references Customers(customer_id))                                                                                
+                order_date (DATE)                                                                                                                      
                 Order_amount (DECIMAL)
 
 **Table**: **OrderItems**                                                                                                                                             
-**Attributes**: order_item_id (INT, PRIMARY KEY, AUTO_INCREMENT)
-                order_id (INT, FOREIGN KEY references Orders(order_id))
-                book_id (INT, FOREIGN KEY references Books(book_id))
-                order_quantity (INT)
+**Attributes**:                                                                                                                                         
+                order_item_id (INT, PRIMARY KEY, AUTO_INCREMENT)                                                                    
+                order_id (INT, FOREIGN KEY references Orders(order_id))                                                                
+                book_id (INT, FOREIGN KEY references Books(book_id))                                                                                
+                order_quantity (INT)                                                                                                                
                 total_price (DECIMAL)
 
 **Table**: **Reviews**                                                                                                                                          
-**Attributes**: review_id (INT, PRIMARY KEY, AUTO_INCREMENT)
-                book_id (INT, FOREIGN KEY references Books(book_id))
-                customer_id (INT, FOREIGN KEY references Customers(customer_id))
-                Customer_rating (INT)
-                Customer_comments (TEXT)
+**Attributes**:                                                                                                                                       
+                review_id (INT, PRIMARY KEY, AUTO_INCREMENT)                                                                                  
+                book_id (INT, FOREIGN KEY references Books(book_id))                                                                              
+                customer_id (INT, FOREIGN KEY references Customers(customer_id))                                                                      
+                Customer_rating (INT)                                                                                                                    
+                Customer_comments (TEXT)                                                                                                                        
                 review_date (DATE)
 
 
