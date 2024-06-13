@@ -11,7 +11,8 @@ Below are the Tables and their attributes with Data Types required:
                 Author_type (VARCHAR),
                 Author_DOB (DATE)
 
-**Table**: **Publishers**                                                                                                                                                      **Attributes**:  publisher_id(INT, PRIMARY KEY),
+**Table**: **Publishers**                                                                                                                                                   
+**Attributes**:  publisher_id(INT, PRIMARY KEY),
                  publisher_name (VARCHAR),
                  Publisher_contact (INT),
                  Publisher_email (VARCHAR)
