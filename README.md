@@ -351,15 +351,28 @@ FROM sales s
 JOIN books b ON s.book_id = b.book_id
 JOIN book_genres bg ON b.book_id = bg.book_id
 JOIN genres g ON bg.genre_id = g.genre_id
-GROUP BY g.genre_name
-ORDER BY total_sales DESC
+GROUP BY g.genre_name, ORDER BY total_sales DESC
 LIMIT 1;
 
 
 `5.5 The 10 most recent posted reviews by Customers`
-```sql
---SQL CODE here
-```
+SELECT
+    r.review_id,
+    r.customer_id,
+    c.name AS customer_name,
+    r.book_id,
+    b.title AS book_title,
+    r.review_text,
+    r.posted_date
+FROM 
+    Reviews r
+JOIN 
+    Customers c ON r.customer_id = c.customer_id
+JOIN 
+    Books b ON r.book_id = b.book_id
+ORDER BY 
+    r.posted_date DESC
+LIMIT 10;
 
 
 ## 6. CREATING A TYPESCRIPT INTERFACE THAT WILL ALLOW MODIFICATION TO A TABLE.
