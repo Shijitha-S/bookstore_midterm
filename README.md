@@ -346,9 +346,15 @@ HAVING SUM(o.Order_amount) > 75;
 ```
 
 `5.4 The most popular genre by sales`
-```sql
---SQL CODE here
-```
+SELECT g.genre_name, SUM(s.quantity) AS total_sales
+FROM sales s
+JOIN books b ON s.book_id = b.book_id
+JOIN book_genres bg ON b.book_id = bg.book_id
+JOIN genres g ON bg.genre_id = g.genre_id
+GROUP BY g.genre_name
+ORDER BY total_sales DESC
+LIMIT 1;
+
 
 `5.5 The 10 most recent posted reviews by Customers`
 ```sql
