@@ -355,6 +355,7 @@ GROUP BY g.genre_name, ORDER BY total_sales DESC
 LIMIT 1;
 
 
+
 `5.5 The 10 most recent posted reviews by Customers`
 SELECT
     r.review_id,
