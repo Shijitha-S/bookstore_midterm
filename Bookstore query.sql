@@ -258,8 +258,18 @@ GROUP BY b.book_id
 HAVING AVG(r.customer_rating) > (SELECT AVG(customer_rating) FROM Review);
 
 -- 5.4 The most popular genre by sales
+SELECT b.book_genre, SUM(oi.total_price) AS total_sales
+FROM Books b
+JOIN OrderItems oi on n.book_id = oi.book_id
+GROUP BY b.book_genre
+ORDER BY total_sales DESC
+LIMIT 1;
 
--- 5.5 The 10 most recent posted reviews by Customers 
+-- 5.5 The 10 most recent posted reviews by Customers
+-- SELECT r.review_id, r.book_id, r.customer_id, r.Customer_rating, r.Customer_comments, r.review_date
+-- FROM Review r
+-- ORDER BY r.review_date DESC
+-- LIMIT 10;
 
 -- 6. CREATING A TYPESCRIPT INTERFACE THAT WILL ALLOW MODIFICATION TO A TABLE.
 
