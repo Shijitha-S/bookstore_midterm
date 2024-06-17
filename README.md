@@ -351,7 +351,12 @@ HAVING AVG(r.customer_rating) > (SELECT AVG(customer_rating) FROM Review);
 
 `5.4 The most popular genre by sales`
 ```sql
---SQL CODE here
+SELECT b.book_genre, SUM(oi.total_price) AS total_sales
+FROM Books b
+JOIN OrderItems oi on n.book_id = oi.book_id
+GROUP BY b.book_genre
+ORDER BY total_sales DESC
+LIMIT 1;
 ```
 
 `5.5 The 10 most recent posted reviews by Customers`
