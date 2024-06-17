@@ -356,9 +356,21 @@ HAVING AVG(r.customer_rating) > (SELECT AVG(customer_rating) FROM Review);
 
 `5.5 The 10 most recent posted reviews by Customers`
 ```sql
---SQL CODE here
+SELECT r.review_id,c.customer_name,b.book_title,r.Customer_comments,r.review_date
+FROM Review r JOIN Customers c ON r.customer_id = c.customer_id
+JOIN Books b ON b.book_id = r.book_id
+ORDER BY r.review_date DESC
+LIMIT 10;
 ```
 
-
 ## 6. CREATING A TYPESCRIPT INTERFACE THAT WILL ALLOW MODIFICATION TO A TABLE.
-**Please work on this part**
+interface Book {
+    book_id: number;
+    book_title: string;
+    book_genre: string;
+    Author_id: number;
+    publisher_id: number;
+    publication_date: string; -- Using string to represent date in ISO format(ISO 2108:2017) can no use numbers only
+    format: 'physical' | 'ebook' | 'audiobook';
+    book_cost: number;
+}
