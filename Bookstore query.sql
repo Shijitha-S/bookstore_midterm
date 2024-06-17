@@ -251,9 +251,35 @@ GROUP BY o.customer_id
 HAVING SUM(o.Order_amount) > 75;
 
 -- 5.3 Well Reviewed books that has a better user rating than average
+SELECT b.book_id, b.book_title, b.book_genre, b.book_cost
+FROM Books b
+JOIN Review r ON b.book_id = r.book_id
+GROUP BY b.book_id
+HAVING AVG(r.customer_rating) > (SELECT AVG(customer_rating) FROM Review);
 
 -- 5.4 The most popular genre by sales
+SELECT b.book_genre, SUM(oi.total_price) AS total_sales
+FROM Books b
+JOIN OrderItems oi on n.book_id = oi.book_id
+GROUP BY b.book_genre
+ORDER BY total_sales DESC
+LIMIT 1;
 
--- 5.5 The 10 most recent posted reviews by Customers 
+-- 5.5 The 10 most recent posted reviews by Customers
+-- SELECT r.review_id, r.book_id, r.customer_id, r.Customer_rating, r.Customer_comments, r.review_date
+-- FROM Review r
+-- ORDER BY r.review_date DESC
+-- LIMIT 10;
 
+-- 6. CREATING A TYPESCRIPT INTERFACE THAT WILL ALLOW MODIFICATION TO A TABLE.
 
+interface Book {
+    book_id: number;
+    book_title: string;
+    book_genre: string;
+    Author_id: number;
+    publisher_id: number;
+    publication_date: string; -- Using string to represent date in ISO format(ISO 2108:2017) can no use numbers only
+    format: 'physical' | 'ebook' | 'audiobook';
+    book_cost: number;
+}
