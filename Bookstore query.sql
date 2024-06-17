@@ -251,7 +251,7 @@ GROUP BY o.customer_id
 HAVING SUM(o.Order_amount) > 75;
 
 -- 5.3 Well Reviewed books that has a better user rating than average
-SELECT b.book_id, b.book_title, b.book_genre, b.book_cost
+SELECT b.book_id,b.book_title, b.book_genre, AVG(r.customer_rating)
 FROM Books b
 JOIN Review r ON b.book_id = r.book_id
 GROUP BY b.book_id
