@@ -364,6 +364,7 @@ LIMIT 10;
 ```
 
 ## 6. CREATING A TYPESCRIPT INTERFACE THAT WILL ALLOW MODIFICATION TO A TABLE.
+```sql
 interface Book {
     book_id: number;
     book_title: string;
@@ -374,3 +375,4 @@ interface Book {
     format: 'physical' | 'ebook' | 'audiobook';
     book_cost: number;
 }
+```
