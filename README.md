@@ -342,7 +342,11 @@ HAVING SUM(o.Order_amount) > 75;
 
 `5.3 Well Reviewed books that has a better user rating than average`
 ```sql
---SQL CODE here
+SELECT b.book_id,b.book_title, b.book_genre, AVG(r.customer_rating)
+FROM Books b
+JOIN Review r ON b.book_id = r.book_id
+GROUP BY b.book_id
+HAVING AVG(r.customer_rating) > (SELECT AVG(customer_rating) FROM Review);
 ```
 
 `5.4 The most popular genre by sales`
