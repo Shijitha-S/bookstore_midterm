@@ -1,6 +1,18 @@
 # bookstore_midterm
 
 ## 1. Below are the duties being assigned to the individual members.
+**Yash Parekh:**
+            - Worked on creating the tables (Point 2).
+            - Worked on creating sample data (Point 3).
+**Shijitha:**
+         - Worked on the DDL/DML operations (Point 4).
+         - Worked on the SQL queries for power writers (Query 5.1) and loyal customers (Query 5.2).
+**Shikha:**
+         - Worked on the SQL query for the 10 most recent posted reviews by customers (Query 5.5).
+**Volodhomyr:**
+          - Worked on the SQL queries for well-reviewed books (Query 5.3) and the most popular genre by sales (Query 5.4).
+          - Worked on the TypeScript interface (Point 6).
+          
 
 ## 2. The tables required for Bookstore along with the details of the the data being captured for each table, and what type each of the attribute are as given below:
 Below are the Tables and their attributes with Data Types required:
